@@ -9,6 +9,8 @@ import org.apache.shiro.authc.*;
 import org.apache.shiro.realm.AuthenticatingRealm;
 import org.apache.shiro.util.ByteSource;
 
+import java.util.Arrays;
+
 /**
  * @Description:
  * @Author: ZC
@@ -23,6 +25,7 @@ public class ShrioReaml extends AuthenticatingRealm {
 //        获取前台输入的账号；
         String userName = token.getUsername();
 //        获取前台输入的密码，此时的密码已经净多MD5加密，与配置文件配置的一致；
+//        在生产环境中该密码就是数据库中保存的密码，PasswordUtil中已经有相应的加密方法；
         String passWord = null;
 //        RealmName
         String realmName = getName();
