@@ -70,6 +70,10 @@ public class ShrioController {
         }else {
             log.info("不是通过记住密码登录！");
         }
+
+        boolean user = subject.hasRole("user");
+        System.out.println(user);
+
         return "list";
     }
 
